@@ -29,3 +29,17 @@ valores de las desviaciones de la media.<div/>
 <center>
 ![](https://raw.githubusercontent.com/LizBautista/Statictics-with-R-/main/Images/mean%20absolute%20deviation.png)
 </center>
+
+## **Desviación estandar**
+
+La desviación estándar (en inglés “standard deviation”; SD) es una medida de la dispersión de los datos, cuanto mayor sea la dispersión mayor es la desviación estándar, si no hubiera ninguna variación en los datos, es decir, si fueran todos iguales, la desviación estándar sería cero. La desviación estándar cuantifica la dispersión alrededor de la media aritmética. Informa de la media de distancias que tienen los datos respecto de su media aritmética.
+
+
+
+## **Varianza**
+
+## **Percentil**
+
+## **Rango intercuartil**
+
+
