@@ -15,12 +15,7 @@ library(vioplot)
 library(corrplot)
 library(gmodels)
 library(matrixStats)
-library( tables ) 
-
-# Ruta de trabajo
-path<-"D:/Autodicta/Estadistica en R/practical-statistics-for-data-scientists-master"
-setwd(path) 
-getwd()
+library( tables )
 
 ```
 
@@ -29,12 +24,12 @@ getwd()
 <div style="text-align: justify">La media aritmética es el valor obtenido de la suma de todas las observaciones y su división por
 el total por el número de observaciones que hay en el grupo de datos.<div/>
 <center>
-![](mean.PNG)
+![](https://raw.githubusercontent.com/LizBautista/Statictics-with-R-/main/Images/mean.PNG)
 </center>
 ```{r}
 # Data
 
-state <- read.csv(file.path(path, "state.csv"))
+state <- read.csv("https://raw.githubusercontent.com/LizBautista/Statictics-with-R-/main/state.csv")
 state<-state[1:10,]
 knitr::kable(state, digits = 1, align = "lccc", caption = "State data" )
 
@@ -59,7 +54,7 @@ restantes.
 <br>
 <br>
 <center>
-![](trimmed mean.PNG)
+![](https://raw.githubusercontent.com/LizBautista/Statictics-with-R-/main/Images/trimmed%20mean.PNG)
 </center>
 ```{r }
 state_ordenado <- state[order(state$Population), ] # Order the sample to obtain the trimmed mean
@@ -76,7 +71,7 @@ Hay dos motivaciones principales para usar una media ponderada:
 <br>
 <br>
 <center>
-![](media ponderada.PNG)
+![](https://raw.githubusercontent.com/LizBautista/Statictics-with-R-/main/Images/weighted%20mean.PNG)
 </center>
 ```{r }
 x <- c(3.7,3.3,3.5,2.8) # Object containing the values whose weighted mean is to be computed.
@@ -114,6 +109,8 @@ La moda es el valor que aparece con mayor frecuencia en un conjunto de datos
 #install.packages("modeest") 
 library(modeest)
 knitr::kable(trees, digits = 1, align = "ccc", caption = "Trees data" )
+
+# Option 1 
 mlv(trees$Volume, method = "mfv")
 ```
 ```{r }
@@ -124,6 +121,5 @@ moda=function(x) {
     return(q[1])
 }
 moda(trees$Volume)
-
 
 ```
