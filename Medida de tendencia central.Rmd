@@ -18,6 +18,10 @@ library(matrixStats)
 library( tables )
 
 ```
+<br>
+<br>
+<div style="text-align: justify">Son medidas estadísticas que se usan para describir como se puede resumir la localización de los datos. Ubican e identifican el punto alrededor del cual se centran los datos. Las medidas de tendencia central nos indican hacia donde se inclinan o se agrupan más los datos. Las más utilizadas son: la media, la mediana y la moda.<div/>
+<br>
 
 ## **Media aritmética**
 
