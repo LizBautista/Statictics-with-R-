@@ -19,6 +19,11 @@ library( tables )
 ```
 <br>
 <br>
-<div style="text-align: justify">La variabilidad, también conocida como dispersión, mide si los valores de los datos son
-apiñados o esparcidos. Las medidas de dispersión entregan información sobre la variación de la variable. Pretenden resumir en un solo valor la dispersión que tiene un conjunto de datos. Las medidas de dispersión más utilizadas son: rango de variación, varianza, desviación estándar, coeficiente de variación<div/>
-<br>
+<div style="text-align: justify">La variabilidad, también conocida como dispersión, mide si los valores de los datos son apiñados o esparcidos. Las medidas de dispersión entregan información sobre la variación de la variable. Pretenden resumir en un solo valor la dispersión que tiene un conjunto de datos. Las medidas de dispersión más utilizadas son: rango de variación, varianza, desviación estándar, coeficiente de variación<div/>
+
+## **Desviación media absoluta**
+
+<div style="text-align: justify">Promediar las desviaciones en sí no nos diría mucho: lo negativo
+las desviaciones compensan las positivas. De hecho, la suma de las desviaciones de la media
+es precisamente cero. En cambio, un enfoque simple es tomar el promedio del valor absoluto
+valores de las desviaciones de la media.<div/>
