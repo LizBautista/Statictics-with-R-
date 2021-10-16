@@ -23,7 +23,9 @@ library( tables )
 
 ## **Desviación media absoluta**
 
-<div style="text-align: justify">Promediar las desviaciones en sí no nos diría mucho: lo negativo
-las desviaciones compensan las positivas. De hecho, la suma de las desviaciones de la media
+<div style="text-align: justify">Promediar las desviaciones en sí no nos diría mucho: Las desviaciones negativas se compensarian con las desviaciones positivas. De hecho, la suma de las desviaciones de la media
 es precisamente cero. En cambio, un enfoque simple es tomar el promedio del valor absoluto
 valores de las desviaciones de la media.<div/>
+<center>
+![](https://raw.githubusercontent.com/LizBautista/Statictics-with-R-/main/Images/mean%20absolute%20deviation.png)
+</center>
