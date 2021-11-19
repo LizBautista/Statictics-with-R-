@@ -20,7 +20,7 @@ library( tables )
 ```
 <br>
 <br>
-<div style="text-align: justify">Son medidas estadísticas que se usan para describir como se puede resumir la localización de los datos. Ubican e identifican el punto alrededor del cual se centran los datos. Las medidas de tendencia central nos indican hacia donde se inclinan o se agrupan más los datos. Las más utilizadas son: la media, la mediana y la moda.<div/>
+<div style="text-align: justify">Son medidas estadísticas que se usan para describir la localización de los datos. Ubican e identifican el punto alrededor del cual se centran los datos. Las medidas de tendencia central nos indican hacia donde se inclinan o se agrupan más los datos. Las más utilizadas son: la media, la mediana y la moda.<div/>
 <br>
 
 ## **Media aritmética**
@@ -32,9 +32,12 @@ el total por el número de observaciones que hay en el grupo de datos.<div/>
 </center>
 ```{r}
 # Data
-
 state <- read.csv("https://raw.githubusercontent.com/LizBautista/Statictics-with-R-/main/state.csv")
+
+# Selet a subset
 state<-state[1:10,]
+
+
 knitr::kable(state, digits = 1, align = "lccc", caption = "State data" )
 
 # Calculate the mean 
