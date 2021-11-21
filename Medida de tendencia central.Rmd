@@ -23,7 +23,9 @@ library( tables )
 <div style="text-align: justify">Son medidas estadísticas que se usan para describir la localización de los datos. Ubican e identifican el punto alrededor del cual se centran los datos. Las medidas de tendencia central nos indican hacia donde se inclinan o se agrupan más los datos. Las más utilizadas son: la media, la mediana y la moda.<div/>
 <br>
 
-## **Media aritmética**
+## **Media aritmética**  <font size=4 color="red"> **[Datos no agrupados]**</font>
+
+
 
 <div style="text-align: justify">La media aritmética es el valor obtenido de la suma de todas las observaciones y su división por
 el total por el número de observaciones que hay en el grupo de datos.<div/>
@@ -37,7 +39,7 @@ state <- read.csv("https://raw.githubusercontent.com/LizBautista/Statictics-with
 # Selet a subset
 state<-state[1:10,]
 
-
+# Show data in table
 knitr::kable(state, digits = 1, align = "lccc", caption = "State data" )
 
 # Calculate the mean 
@@ -47,15 +49,19 @@ suma<-sum(state$Population) # Sum of the elements of the population variable
 n<-length(state$Population) # Sets the length of a vector
 mean_1<-suma/n 
 print(mean_1)
+
 # Option 2
 mean_2<-mean(state$Population) # Mean arithmetic of the Population variable.
 print(mean_2)
 
 ```
+## **Media aritmética**  <font size=4 color="red"> **[Datos agrupados discretos]**</font>
+
+## **Media aritmética**  <font size=4 color="red"> **[Datos agrupados continuos]**</font>
 
 ## **Media aritmética acotada**
 
-Una media acotada elimina la influencia de valores extremos; ya que, se excluye cierto porcentaje de datos extremos de la muestra ordenada. Una vez que se han
+Una media acotada elimina la influencia de valores extremos (valores muy grandes o muy pequeños); ya que, se excluye cierto porcentaje de datos extremos de la muestra ordenada. Una vez que se han
 eliminado los valores indicados de cada extremo, se calcula el promedio de los valores
 restantes.
 <br>
@@ -64,8 +70,22 @@ restantes.
 ![](https://raw.githubusercontent.com/LizBautista/Statictics-with-R-/main/Images/trimmed%20mean.PNG)
 </center>
 ```{r }
+# Data
+state <- read.csv("https://raw.githubusercontent.com/LizBautista/Statictics-with-R-/main/state.csv")
+
+# Selet a subset
+state<-state[1:10,]
+
+# Show data in table
+knitr::kable(state, digits = 1, align = "lccc", caption = "State data" )
+
+# Sort the data
 state_ordenado <- state[order(state$Population), ] # Order the sample to obtain the trimmed mean
+
+# Show data in table
 knitr::kable(state_ordenado, digits = 1, align = "lccc", caption = "State data" )
+
+# Calculate the trimmed mean
 mean(state_ordenado[['Population']], trim=0.2) # In the variable population, the upper and lower 20% of data from the ordered sample are eliminated.
 ```
 ## **Media aritmética ponderada**
@@ -81,21 +101,28 @@ Hay dos motivaciones principales para usar una media ponderada:
 ![](https://raw.githubusercontent.com/LizBautista/Statictics-with-R-/main/Images/weighted%20mean.PNG)
 </center>
 ```{r }
+# create a data vector
 x <- c(3.7,3.3,3.5,2.8) # Object containing the values whose weighted mean is to be computed.
+
+# Data weights
 wt <- c(5,  5,  4,  1) # Numerical vector of weights the same length as x giving the weights to use for elements of x
+
+# Calculate weighted mean
 wm <- weighted.mean(x, wt) # Weighted arithmetic mean
 ```
 
 ## **Mediana**
-La mediana es el número del medio en una lista ordenada de datos. Si hay un par número de valores de datos, el valor medio es uno que no está realmente en el conjunto de datos, sino más bien el promedio de los dos valores que dividen los datos ordenados en superior y mitades inferiores. En comparación con la media, que utiliza todas las observaciones, la mediana depende solo de los valores en el centro de los datos ordenados. Si bien esto puede parecer ser una desventaja, ya que la media es mucho más sensible a los datos, hay muchos casos en los que la mediana es una mejor métrica para la ubicación. 
+La mediana es el número que se posiciona en el centro de una lista ordenada de datos. Si hay un par número de valores de datos, el valor medio es uno que no está realmente en el conjunto de datos, sino más bien el promedio de los dos valores que dividen los datos ordenados en superior y mitades inferiores. En comparación con la media, que utiliza todas las observaciones, la mediana depende solo de los valores en el centro de los datos ordenados. Si bien esto puede parecer ser una desventaja, ya que la media es mucho más sensible a los datos, hay muchos casos en los que la mediana es una mejor métrica para la ubicación. 
 
 <br>
 <br>
 <center>
 </center>
 ```{r }
-# Vector
+# create a data vector
 x <- c(3.7,3.3,3.5,2.8) 
+
+# Calculate the median
 
 # Option 1 
 m_1<- median(x, na.rm = FALSE) # na.rm is a logical value indicating whether NA values should be stripped before the computation proceeds.
@@ -114,14 +141,17 @@ La moda es el valor que aparece con mayor frecuencia en un conjunto de datos
 </center>
 ```{r }
 #install.packages("modeest") 
-library(modeest)
+library(modeest) # this library help us to get the mode directly
+
+# Show data
 knitr::kable(trees, digits = 1, align = "ccc", caption = "Trees data" )
 
 # Option 1 
-mlv(trees$Volume, method = "mfv")
+mlv(trees$Volume, method = "mfv") # we use the library modeest
 ```
 ```{r }
 #Option 2 
+# We create a function
 moda=function(x) {
     q=table(x)
     q=sort(q,TRUE)
@@ -130,3 +160,7 @@ moda=function(x) {
 moda(trees$Volume)
 
 ```
+
+# Conceptos Claves
+
+
